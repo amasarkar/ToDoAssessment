@@ -1,0 +1,17 @@
+﻿.vs/
+*.suo
+*.user
+*.userosscache
+bin/
+obj/
+out/
+TestResults/
+*.testlog
+*.sqlite
+VSWorkspaceState.json
+*.wsuo
+.idea/
+copilot-chat/
+CopilotIndices/
+*.nupkg
+*.log
