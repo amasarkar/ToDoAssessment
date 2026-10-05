@@ -1,0 +1,45 @@
+<section class="todo-app">
+  <h1>My Todos</h1>
+
+  <form class="add-form" (submit)="$event.preventDefault(); addTodo(titleInput)">
+    <input
+      #titleInput
+      type="text"
+      name="title"
+      placeholder="What do you need to do?"
+      [attr.maxlength]="titleMaxLength"
+      [disabled]="saving()"
+      autocomplete="off"
+    />
+    <button type="submit" [disabled]="saving()">
+      {{ saving() ? 'Adding…' : 'Add' }}
+    </button>
+  </form>
+
+  @if (error()) {
+    <p class="error" role="alert">{{ error() }}</p>
+  }
+
+  @if (loading()) {
+    <p class="status">Loading your todos…</p>
+  } @else if (todos().length === 0) {
+    <p class="status">Nothing to do yet. Add your first item above.</p>
+  } @else {
+    <ul class="todo-list">
+      @for (todo of todos(); track todo.id) {
+        <li class="todo-item" [class.is-deleting]="isDeleting(todo.id)">
+          <span class="todo-title">{{ todo.title }}</span>
+          <button
+            type="button"
+            class="delete-button"
+            (click)="deleteTodo(todo.id)"
+            [disabled]="isDeleting(todo.id)"
+            aria-label="Delete {{ todo.title }}"
+          >
+            {{ isDeleting(todo.id) ? 'Removing…' : 'Delete' }}
+          </button>
+        </li>
+      }
+    </ul>
+  }
+</section>

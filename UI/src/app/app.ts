@@ -1,12 +1,10 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component } from '@angular/core';
+import { TodoList } from './features/todo-list/todo-list';
 
 @Component({
-  imports: [RouterOutlet],
   selector: 'app-root',
+  imports: [TodoList],
   styleUrl: './app.css',
   templateUrl: './app.html',
 })
-export class App {
-  protected readonly title = signal('ToDoAssessment.UI');
-}
+export class App {}

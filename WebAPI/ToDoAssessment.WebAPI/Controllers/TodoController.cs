@@ -5,7 +5,7 @@ using ToDoAssessment.WebAPI.Services;
 namespace ToDoAssessment.WebAPI.Controllers;
 
 [ApiController]
-[Route("api/[controller]")]
+[Route("api/todos")]
 public class TodoController(ITodoService todoService) : ControllerBase
 {
     [HttpGet]

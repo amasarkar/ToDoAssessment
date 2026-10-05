@@ -2,4 +2,4 @@
 
 namespace ToDoAssessment.WebAPI.Models;
 
-public sealed record CreateTodoRequest([property: Required, StringLength(200)] string Title);
+public sealed record CreateTodoRequest([Required, StringLength(200)] string Title);
