@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="ToDoAssessment.WebAPI.Tests/ToDoAssessment.WebAPI.Tests.csproj" />
+  <Project Path="ToDoAssessment.WebAPI/ToDoAssessment.WebAPI.csproj" />
+</Solution>
